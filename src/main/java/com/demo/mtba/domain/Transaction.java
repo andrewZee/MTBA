@@ -53,7 +53,7 @@ public class Transaction {
         this.status = status;
     }
 
-    public static class Builder{
+    public static class Builder {
         private long id;
         private String user;
         private Account accountFrom;
@@ -85,6 +85,7 @@ public class Transaction {
             this.amount = amount;
             return this;
         }
+
         public Builder status(TransactionStatus status) {
             this.status = status;
             return this;
@@ -93,6 +94,26 @@ public class Transaction {
         public Transaction build() {
             return new Transaction(id, user, accountFrom, accountTo, amount, status);
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+
+        if (!(o instanceof Transaction)) {
+            return false;
+        }
+
+        Transaction t = (Transaction) o;
+
+        return t.id == this.id
+                && user.equals(t.user)
+                && accountFrom.equals(t.accountFrom)
+                && accountTo.equals(t.accountTo)
+                && amount.equals(t.amount)
+                && status.equals(t.status);
     }
 
 }

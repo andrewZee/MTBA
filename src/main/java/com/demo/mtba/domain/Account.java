@@ -35,4 +35,22 @@ public class Account {
     public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+
+        if (!(o instanceof Account)) {
+            return false;
+        }
+
+        Account a = (Account) o;
+
+        return accountId.equals(a.accountId)
+                && ((user == null && a.user == null) || user.equals(a.user))
+                && ((amount == null && a.amount == null) || amount.equals(a.amount));
+    }
+
 }

@@ -18,4 +18,20 @@ public class Response {
         return responseMessage;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+
+        if (!(o instanceof Response)) {
+            return false;
+        }
+
+        Response r = (Response) o;
+
+        return responseCode == r.responseCode
+                && responseMessage.equals(r.responseMessage);
+    }
+
 }
