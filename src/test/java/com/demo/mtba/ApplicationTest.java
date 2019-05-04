@@ -11,7 +11,7 @@ import java.net.http.HttpResponse;
 
 import static org.junit.Assert.assertEquals;
 
-public class HTTPServerTestIT {
+public class ApplicationTest {
 
     private static HttpClient client;
 

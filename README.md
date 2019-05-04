@@ -1,7 +1,7 @@
 # MTBA
 1) Check application by tests: 
     
-    Please find class HTTPServerTestIT and run all tests in there.
+    Please find class ApplicationTest and run all tests in there.
 
 2) Run application locally:
 
